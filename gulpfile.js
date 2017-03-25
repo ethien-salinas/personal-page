@@ -11,7 +11,7 @@ var pkg = require('./package.json');
 // Set the banner content
 var banner = ['/*!\n',
     ' * <%= pkg.title %> v<%= pkg.version %>\n',
-    ' * ' + (new Date()).getFullYear(), +' <%= pkg.author %>\n',
+    ' * ' + (new Date()).getFullYear() +' <%= pkg.author %>\n',
     ' */\n',
     ''
 ].join('');
