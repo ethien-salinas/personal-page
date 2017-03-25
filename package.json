@@ -17,6 +17,6 @@
     "jquery": "^1.11.3"
   },
   "scripts":{
-    "start": "gulp dev"
+    "start": "gulp"
   }
 }
