@@ -20,7 +20,7 @@ var banner = ['/*!\n',
 gulp.task('less', function() {
     var f = filter(['*', '!mixins.less', '!variables.less']);
     return gulp.src('less/*.less')
-        .pipe(f)
+//        .pipe(f)
         .pipe(less())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('css'))
