@@ -1,23 +1,22 @@
-var gulp = require('gulp');
-var less = require('gulp-less');
-var browserSync = require('browser-sync').create();
-var header = require('gulp-header');
-var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
+let gulp        = require('gulp');
+let less        = require('gulp-less');
+let browserSync = require('browser-sync').create();
+let header      = require('gulp-header');
+let cleanCSS    = require('gulp-clean-css');
+let rename      = require("gulp-rename");
+let uglify      = require('gulp-uglify');
+let pkg         = require('./package.json');
 
 // Set the banner content
-var banner = ['/*!\n',
-    ' * <%= pkg.title %> v<%= pkg.version %>\n',
-    ' * ' + (new Date()).getFullYear() +' <%= pkg.author %>\n',
-    ' */\n',
-    ''
-].join('');
+let banner =
+`/*!
+ * <%= pkg.title %> v<%= pkg.version %>
+ * ${new Date().getFullYear()} <%= pkg.author %>
+ */
+`;
 
 // Compile LESS files from /less into /css
-gulp.task('less', function() {
-
+gulp.task('less', () => {
     return gulp.src(['less/*.less', '!less/mixins.less', '!less/variables.less'])
         .pipe(less())
         .pipe(header(banner, { pkg: pkg }))
@@ -28,7 +27,7 @@ gulp.task('less', function() {
 });
 
 // Minify compiled CSS
-gulp.task('minify-css', ['less'], function() {
+gulp.task('minify-css', ['less'], () => {
     return gulp.src('css/freelancer.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
@@ -39,7 +38,7 @@ gulp.task('minify-css', ['less'], function() {
 });
 
 // Minify JS
-gulp.task('minify-js', function() {
+gulp.task('minify-js', () => {
     return gulp.src('js/freelancer.js')
         .pipe(uglify())
         .pipe(header(banner, { pkg: pkg }))
@@ -51,7 +50,7 @@ gulp.task('minify-js', function() {
 });
 
 // Copy vendor libraries from /node_modules into /vendor
-gulp.task('copy', function() {
+gulp.task('copy', () => {
     gulp.src(['node_modules/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
         .pipe(gulp.dest('vendor/bootstrap'))
 
