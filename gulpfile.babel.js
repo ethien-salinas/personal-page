@@ -1,11 +1,12 @@
-let gulp        = require('gulp');
-let less        = require('gulp-less');
-let browserSync = require('browser-sync').create();
-let header      = require('gulp-header');
-let cleanCSS    = require('gulp-clean-css');
-let rename      = require("gulp-rename");
-let uglify      = require('gulp-uglify');
-let pkg         = require('./package.json');
+'use strict';
+import gulp        from 'gulp';
+import less        from 'gulp-less';
+import browserSync from 'browser-sync';
+import header      from 'gulp-header';
+import cleanCSS    from 'gulp-clean-css';
+import rename      from 'gulp-rename';
+import uglify      from 'gulp-uglify';
+import pkg         from './package.json';
 
 // Set the banner content
 let banner =
