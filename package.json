@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "author": "Ethien Salinas",
   "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
     "font-awesome": "^4.7.0",
