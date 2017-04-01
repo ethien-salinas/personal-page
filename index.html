@@ -33,15 +33,18 @@
 	<div class="container">
 		<!-- Brand and toggle -->
 		<div class="navbar-header page-scroll">
-			<button class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#collapse-menu">
 				<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>.
 				<a class="navbar-brand" href="#page-top">Start Bootstrap</a>
 			</button>
 		</div>
 
 		<!-- nav links -->
-		<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
+		<div id="collapse-menu" class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
+				<li class="hidden">
+					<a href="#page-top"></a>
+				</li>
 				<li class="page-scroll">
 					<a href="#portfolio">Portfolio</a>
 				</li>
@@ -106,6 +109,26 @@
 <section id="contact">
 
 </section>
+
+<!-- Portfolio Modals -->
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-content">
+		<div class="close-modal" data-dismiss="modal">
+			<div class="lr">
+				<div class="rl"></div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div class="modal-body">
+						<h2>Data integration project</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
