@@ -6,6 +6,7 @@ import header      from 'gulp-header';
 import cleanCSS    from 'gulp-clean-css';
 import rename      from 'gulp-rename';
 import uglify      from 'gulp-uglify';
+import pump        from 'pump';
 import pkg         from './package.json';
 
 // Set the banner content
@@ -39,16 +40,21 @@ gulp.task('minify-css', ['less'], () => {
 });
 
 // Minify JS
-gulp.task('minify-js', () => {
-    return gulp.src('js/freelancer.js')
-        .pipe(uglify())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+gulp.task('minify-js', function (cb) {
+  pump([
+      gulp.src('js/freelancer.js'),
+      uglify(),
+      header(banner, { pkg: pkg }),
+      rename({ suffix: '.min' }),
+      gulp.dest('js'),
+      browserSync.reload({
+        stream: true
+      })
+    ],
+    cb
+  );
 });
+
 
 // Copy vendor libraries from /node_modules into /vendor
 gulp.task('copy', () => {
@@ -88,5 +94,5 @@ gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], () => {
     gulp.watch('js/*.js', ['minify-js']);
     // Reloads the browser whenever HTML or JS files change
     gulp.watch('*.html', browserSync.reload);
-    gulp.watch('js/**/*.js', browserSync.reload);
+    gulp.watch('js/*.js', browserSync.reload);
 });
