@@ -67,7 +67,6 @@
 	</div>
 </header>
 
-
 <!-- Portfolio section -->
 <section id="portfolio">
 	<div class="container">
@@ -165,223 +164,45 @@
 	</div>
 </section>
 
-<!-- Portfolio Modals -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-content">
-		<div class="close-modal" data-dismiss="modal">
-			<div class="lr">
-				<div class="rl"></div>
+<!-- Portfolio modals section -->
+<section id="portfolioDetailSection">
+	<div v-for="portfolioDetail in portfolioDetails" v-bind:id="portfolioDetail.id" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-content">
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
 			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="modal-body">
-						<h2>Data integration project</h2>
-						<hr class="star-primary">
-						<img src="img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
-						<p>Bacon ipsum dolor amet swine burgdoggen chicken, pork andouille ribeye meatball jowl landjaeger pork belly alcatra doner jerky. Kevin flank venison, shoulder pastrami cupim leberkas. Ground round jerky landjaeger andouille filet mignon beef. Cupim doner rump tri-tip drumstick ball tip picanha biltong, bacon leberkas alcatra chuck tail. Venison boudin prosciutto chicken ham hock, pork chop doner salami. Sirloin biltong swine turkey, leberkas chicken corned beef strip steak tenderloin hamburger jowl turducken t-bone spare ribs shank.</p>
-						<ul class="list-inline item-details">
-							<li>Client:
-								<strong><a href="https://atom.io/">Atom</a>
-								</strong>
-							</li>
-							<li>Date:
-								<strong><a href="https://atom.io/">2017-04-01</a>
-								</strong>
-							</li>
-							<li>Service:
-								<strong><a href="https://atom.io/">Develop of atom tool</a>
-								</strong>
-							</li>
-						</ul>
-						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="modal-body">
+							<h2>Data integration project</h2>
+							<hr class="star-primary">
+							<img v-bind:src="'img/portfolio/'+portfolioDetail.img" class="img-responsive img-centered" alt="">
+							<p>{{portfolioDetail.description}}</p>
+							<ul class="list-inline item-details">
+								<li>Client:
+									<strong><a href="https://atom.io/">{{portfolioDetail.client}}</a>
+									</strong>
+								</li>
+								<li>Date:
+									<strong><a href="https://atom.io/">{{portfolioDetail.date}}</a>
+									</strong>
+								</li>
+								<li>Service:
+									<strong><a href="https://atom.io/">{{portfolioDetail.service}}</a>
+									</strong>
+								</li>
+							</ul>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-content">
-		<div class="close-modal" data-dismiss="modal">
-			<div class="lr">
-				<div class="rl"></div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="modal-body">
-						<h2>Data integration project</h2>
-						<hr class="star-primary">
-						<img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="cake">
-						<p>Bacon ipsum dolor amet swine burgdoggen chicken, pork andouille ribeye meatball jowl landjaeger pork belly alcatra doner jerky. Kevin flank venison, shoulder pastrami cupim leberkas. Ground round jerky landjaeger andouille filet mignon beef. Cupim doner rump tri-tip drumstick ball tip picanha biltong, bacon leberkas alcatra chuck tail. Venison boudin prosciutto chicken ham hock, pork chop doner salami. Sirloin biltong swine turkey, leberkas chicken corned beef strip steak tenderloin hamburger jowl turducken t-bone spare ribs shank.</p>
-						<ul class="list-inline item-details">
-							<li>Client:
-								<strong><a href="https://atom.io/">Atom</a>
-								</strong>
-							</li>
-							<li>Date:
-								<strong><a href="https://atom.io/">2017-04-01</a>
-								</strong>
-							</li>
-							<li>Service:
-								<strong><a href="https://atom.io/">Develop of atom tool</a>
-								</strong>
-							</li>
-						</ul>
-						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-content">
-		<div class="close-modal" data-dismiss="modal">
-			<div class="lr">
-				<div class="rl"></div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="modal-body">
-						<h2>Data integration project</h2>
-						<hr class="star-primary">
-						<img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="circus">
-						<p>Bacon ipsum dolor amet swine burgdoggen chicken, pork andouille ribeye meatball jowl landjaeger pork belly alcatra doner jerky. Kevin flank venison, shoulder pastrami cupim leberkas. Ground round jerky landjaeger andouille filet mignon beef. Cupim doner rump tri-tip drumstick ball tip picanha biltong, bacon leberkas alcatra chuck tail. Venison boudin prosciutto chicken ham hock, pork chop doner salami. Sirloin biltong swine turkey, leberkas chicken corned beef strip steak tenderloin hamburger jowl turducken t-bone spare ribs shank.</p>
-						<ul class="list-inline item-details">
-							<li>Client:
-								<strong><a href="https://atom.io/">Atom</a>
-								</strong>
-							</li>
-							<li>Date:
-								<strong><a href="https://atom.io/">2017-04-01</a>
-								</strong>
-							</li>
-							<li>Service:
-								<strong><a href="https://atom.io/">Develop of atom tool</a>
-								</strong>
-							</li>
-						</ul>
-						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-content">
-		<div class="close-modal" data-dismiss="modal">
-			<div class="lr">
-				<div class="rl"></div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="modal-body">
-						<h2>Data integration project</h2>
-						<hr class="star-primary">
-						<img src="img/portfolio/game.png" class="img-responsive img-centered" alt="">
-						<p>Bacon ipsum dolor amet swine burgdoggen chicken, pork andouille ribeye meatball jowl landjaeger pork belly alcatra doner jerky. Kevin flank venison, shoulder pastrami cupim leberkas. Ground round jerky landjaeger andouille filet mignon beef. Cupim doner rump tri-tip drumstick ball tip picanha biltong, bacon leberkas alcatra chuck tail. Venison boudin prosciutto chicken ham hock, pork chop doner salami. Sirloin biltong swine turkey, leberkas chicken corned beef strip steak tenderloin hamburger jowl turducken t-bone spare ribs shank.</p>
-						<ul class="list-inline item-details">
-							<li>Client:
-								<strong><a href="https://atom.io/">Atom</a>
-								</strong>
-							</li>
-							<li>Date:
-								<strong><a href="https://atom.io/">2017-04-01</a>
-								</strong>
-							</li>
-							<li>Service:
-								<strong><a href="https://atom.io/">Develop of atom tool</a>
-								</strong>
-							</li>
-						</ul>
-						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-content">
-		<div class="close-modal" data-dismiss="modal">
-			<div class="lr">
-				<div class="rl"></div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="modal-body">
-						<h2>Data integration project</h2>
-						<hr class="star-primary">
-						<img src="img/portfolio/safe.png" class="img-responsive img-centered" alt="safe">
-						<p>Bacon ipsum dolor amet swine burgdoggen chicken, pork andouille ribeye meatball jowl landjaeger pork belly alcatra doner jerky. Kevin flank venison, shoulder pastrami cupim leberkas. Ground round jerky landjaeger andouille filet mignon beef. Cupim doner rump tri-tip drumstick ball tip picanha biltong, bacon leberkas alcatra chuck tail. Venison boudin prosciutto chicken ham hock, pork chop doner salami. Sirloin biltong swine turkey, leberkas chicken corned beef strip steak tenderloin hamburger jowl turducken t-bone spare ribs shank.</p>
-						<ul class="list-inline item-details">
-							<li>Client:
-								<strong><a href="https://atom.io/">Atom</a>
-								</strong>
-							</li>
-							<li>Date:
-								<strong><a href="https://atom.io/">2017-04-01</a>
-								</strong>
-							</li>
-							<li>Service:
-								<strong><a href="https://atom.io/">Develop of atom tool</a>
-								</strong>
-							</li>
-						</ul>
-						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-content">
-		<div class="close-modal" data-dismiss="modal">
-			<div class="lr">
-				<div class="rl"></div>
-			</div>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="modal-body">
-						<h2>Data integration project</h2>
-						<hr class="star-primary">
-						<img src="img/portfolio/submarine.png" class="img-responsive img-centered" alt="submarine">
-						<p>Bacon ipsum dolor amet swine burgdoggen chicken, pork andouille ribeye meatball jowl landjaeger pork belly alcatra doner jerky. Kevin flank venison, shoulder pastrami cupim leberkas. Ground round jerky landjaeger andouille filet mignon beef. Cupim doner rump tri-tip drumstick ball tip picanha biltong, bacon leberkas alcatra chuck tail. Venison boudin prosciutto chicken ham hock, pork chop doner salami. Sirloin biltong swine turkey, leberkas chicken corned beef strip steak tenderloin hamburger jowl turducken t-bone spare ribs shank.</p>
-						<ul class="list-inline item-details">
-							<li>Client:
-								<strong><a href="https://atom.io/">Atom</a>
-								</strong>
-							</li>
-							<li>Date:
-								<strong><a href="https://atom.io/">2017-04-01</a>
-								</strong>
-							</li>
-							<li>Service:
-								<strong><a href="https://atom.io/">Develop of atom tool</a>
-								</strong>
-							</li>
-						</ul>
-						<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+</section>
 
 
 <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
