@@ -1,16 +1,17 @@
 const BASE_URL = 'http://localhost:4000'
+
 let menuCtrl = new Vue({
   el: '#collapse-menu',
   data: {
     menuItems: []
   },
   beforeCreate() {
-      let xhr = new XMLHttpRequest()
       let self = this
-      xhr.open('GET', `${BASE_URL}/portfolio`)
+      let xhr = new XMLHttpRequest()
       xhr.onload = function () {
         self.menuItems = JSON.parse(xhr.responseText).menuItemsArray
       }
+      xhr.open('GET', `${BASE_URL}/portfolio`)
       xhr.send()
   }
 });
@@ -21,12 +22,12 @@ let portfolioCtrl = new Vue({
     portfolioItems:[]
   },
   beforeCreate() {
-      let xhr = new XMLHttpRequest()
       let self = this
-      xhr.open('GET', `${BASE_URL}/portfolio`)
+      let xhr = new XMLHttpRequest()
       xhr.onload = function () {
         self.portfolioItems = JSON.parse(xhr.responseText).portfolioArray
       }
+      xhr.open('GET', `${BASE_URL}/portfolio`)
       xhr.send()
   }
 });
@@ -37,12 +38,12 @@ let portfolioDetail = new Vue({
     portfolioDetails:[]
   },
   beforeCreate() {
-      let xhr = new XMLHttpRequest()
       let self = this
-      xhr.open('GET', `${BASE_URL}/portfolio`)
+      let xhr = new XMLHttpRequest()
       xhr.onload = function () {
         self.portfolioDetails = JSON.parse(xhr.responseText).portfolioDetailsArray
       }
+      xhr.open('GET', `${BASE_URL}/portfolio`)
       xhr.send()
   }
 })
