@@ -13,6 +13,15 @@ $(document).ready(function () {
 		offset: 51
 	});
 
+	// Enable easing plugin
+    $('.page-scroll a').bind('click', function(event) {
+        event.preventDefault();
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+            scrollTop: ($($anchor.attr('href')).offset().top - 50)
+        }, 1250, 'easeInOutExpo');
+    });
+
 	$('form#contactForm').on( "submit",function (event) {
 		event.preventDefault();
 
