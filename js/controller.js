@@ -21,6 +21,24 @@ let portfolioCtrl = new Vue({
   data:{
     portfolioItems:[]
   },
+  methods:{
+    sortAscPortfolioItems: function (event) {
+      this.portfolioItems.map((e) => {
+        console.log(`1 - ${e.id}`);
+      });
+      this.portfolioItems.sort((a,b) => {
+        return a.id - b.id;
+      });
+      this.portfolioItems.map((e) => {
+        console.log(`2 - ${e.id}`);
+      });
+    },
+    sortDescPortfolioItems: function (event) {
+      this.portfolioItems.sort((a,b) => {
+        return b.id - a.id;
+      });
+    }
+  },
   beforeCreate() {
       let self = this
       let xhr = new XMLHttpRequest()

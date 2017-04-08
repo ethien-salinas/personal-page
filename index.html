@@ -76,6 +76,8 @@
 				<hr class="star-primary">
 			</div>
 		</div>
+		<button v-on:click="sortAscPortfolioItems">asc</button>
+		<button v-on:click="sortDescPortfolioItems">desc</button>
 		<div class="row">
 			<div class="col-sm-4 portfolio-item" v-for="portfolioItem in portfolioItems">
 				<a v-bind:href="'#'+portfolioItem.link" class="portfolio-link" data-toggle="modal">
