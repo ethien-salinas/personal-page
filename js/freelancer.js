@@ -32,10 +32,30 @@ $(document).ready(function () {
 				name: $('input#name').val()
 			},
 			success: function(response){
-				console.log('EXITO!!!' + response);
+				console.log('SUCCESS!!!' + response);
+				// Enable button & show success message
+	            $("#btnSubmit").attr("disabled", false);
+	            $('#form-result').html("<div class='alert alert-success'>");
+	            $('#form-result > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+	                .append("</button>");
+	            $('#form-result > .alert-success')
+	                .append("<strong>Your message has been sent. </strong>");
+	            $('#form-result > .alert-success')
+	                .append('</div>');
+
+	            //clear all fields
+	            $('#contactForm').trigger("reset");
 			},
 			error: function (error) {
 				console.log("FAIL!!! :'(" + error);
+				// Fail message
+                $('#form-result').html("<div class='alert alert-danger'>");
+                $('#form-result > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+                    .append("</button>");
+                $('#form-result > .alert-danger').append("<strong>Sorry, it seems that my mail server is not responding. Please try again later!");
+                $('#form-result > .alert-danger').append('</div>');
+                //clear all fields
+                $('#contactForm').trigger("reset");
 			}
 		});
 	});

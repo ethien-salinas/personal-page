@@ -152,7 +152,7 @@
 						</div>
 					</div>
 					<br>
-					<div class="success"></div>
+					<div id="form-result"></div>
 					<div class="row">
 						<div class="form-group col-xs-12">
 							<button type="submit" class="btn btn-success btn-lg">Send</button>
@@ -165,7 +165,7 @@
 </section>
 
 <!-- Portfolio modals section -->
-<section id="portfolioDetailSection">
+<div id="portfolioDetailSection">
 	<div v-for="portfolioDetail in portfolioDetails" v-bind:id="portfolioDetail.id" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-content">
 			<div class="close-modal" data-dismiss="modal">
@@ -202,7 +202,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</div>
 
 
 <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
