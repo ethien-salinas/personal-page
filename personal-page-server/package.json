@@ -1,0 +1,18 @@
+{
+  "name": "personal-page-server",
+  "version": "1.0.0",
+  "title": "Servidor de pagina personal",
+  "description": "Backend del proyecto personal-page",
+  "author": "Ethien Salinas",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}
