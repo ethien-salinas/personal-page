@@ -59,7 +59,7 @@ let portfolioDetail = new Vue({
       let self = this
       let xhr = new XMLHttpRequest()
       xhr.onload = function () {
-        self.portfolioDetails = JSON.parse(xhr.responseText).portfolioDetailsArray
+        self.portfolioDetails = JSON.parse(xhr.responseText).portfolioArray
       }
       xhr.open('GET', `${BASE_URL}/portfolio`)
       xhr.send()

@@ -168,7 +168,7 @@
 
 <!-- Portfolio modals section -->
 <div id="portfolioDetailSection">
-	<div v-for="portfolioDetail in portfolioDetails" v-bind:id="portfolioDetail.id" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+	<div v-for="portfolioDetail in portfolioDetails" v-bind:id="portfolioDetail.details.id" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 		<div class="modal-content">
 			<div class="close-modal" data-dismiss="modal">
 				<div class="lr">
@@ -181,19 +181,19 @@
 						<div class="modal-body">
 							<h2>Data integration project</h2>
 							<hr class="star-primary">
-							<img v-bind:src="'img/portfolio/'+portfolioDetail.img" class="img-responsive img-centered" alt="">
-							<p>{{portfolioDetail.description}}</p>
+							<img v-bind:src="'img/portfolio/'+portfolioDetail.details.img" class="img-responsive img-centered" alt="">
+							<p>{{portfolioDetail.details.description}}</p>
 							<ul class="list-inline item-details">
 								<li>Client:
-									<strong><a href="https://atom.io/">{{portfolioDetail.client}}</a>
+									<strong><a href="https://atom.io/">{{portfolioDetail.details.client}}</a>
 									</strong>
 								</li>
 								<li>Date:
-									<strong><a href="https://atom.io/">{{portfolioDetail.date}}</a>
+									<strong><a href="https://atom.io/">{{portfolioDetail.details.date}}</a>
 									</strong>
 								</li>
 								<li>Service:
-									<strong><a href="https://atom.io/">{{portfolioDetail.service}}</a>
+									<strong><a href="https://atom.io/">{{portfolioDetail.details.service}}</a>
 									</strong>
 								</li>
 							</ul>
