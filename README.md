@@ -1,14 +1,24 @@
-# Pagina personal
+# Personal Page
 
-El proyecto esta configurado con Gulp
+## Run the backend project
 
-Para preparar el proyecto, es necesario ejectutar la tarea por defecto
+Before to run the frontend project, it's necessary to run the backend server to be ready to expose the required data by the frontend layer
+
 ```shell
-$ npm run start
+$ yarn run start-backend
 ```
 
-Para ejecutar el proyecto en modo de desarrollo (navegador sincronizado)
+## Run the frontend project
+
+This project is configured with Gulp
+
+To prepare the project, to run the first time or to create the deliverable version, it's necessary to run the default task
 ```shell
-$ npm run start dev
+$ yarn run start
+```
+
+To run in development mode (synchronized browser), run the next task
+```shell
+$ yarn run start dev
 ```
 
