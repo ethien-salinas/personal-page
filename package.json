@@ -19,6 +19,7 @@
     "pump": "^1.0.2"
   },
   "scripts": {
-    "start": "gulp"
+    "start": "gulp",
+    "start-backend": "node personal-page-server/app.js"
   }
 }
