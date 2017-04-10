@@ -1,11 +1,4 @@
 $(document).ready(function () {
-	
-	// read the text of an element (get)
-	console.log($('h1').text());
-	// modify text (set)
-	$('h1').text('Starting with jQuery');
-	// manipulate DOM adding a new element
-	$( "<p>New element with jQuery</p>" ).appendTo('h1');
 
 	// Activate ScrollSpy
 	$('body').scrollspy({
