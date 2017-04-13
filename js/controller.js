@@ -66,7 +66,13 @@ let portfolioDetail = new Vue({
   }
 })
 
+let abouInfo = {
+  paragraph1: 'Jowl short loin beef, ball tip alcatra beef ribs short ribs meatloaf pork loin burgdoggen jerky filet mignon turkey. Meatloaf cow bacon, jerky boudin rump ground round. Doner beef salami t-bone shoulder cupim. Pancetta fatback ribeye shankle kevin, venison meatball strip steak sausage brisket rump kielbasa picanha. Jerky tail fatback leberkas. Kevin corned beef beef drumstick bresaola brisket prosciutto pig alcatra. Drumstick ground round beef prosciutto venison capicola tail brisket alcatra pig turkey tongue ball tip.',
+  paragraph2: 'Turkey pork chop porchetta, picanha spare ribs prosciutto boudin. Swine tri-tip shank pancetta, landjaeger ham drumstick porchetta. Beef ribs biltong jerky tri-tip pork belly pork loin. Tongue frankfurter capicola pork chop, pancetta chuck cupim landjaeger. Picanha ball tip beef ribs meatball cupim, tongue sirloin pancetta pastrami. Ham hock corned beef prosciutto, fatback drumstick tenderloin swine kevin'
+}
+
 Vue.component('about-section', {
+  props: ['about'],
   template: `<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -76,15 +82,18 @@ Vue.component('about-section', {
 		</div>
 		<div class="row">
 			<div class="col-lg-4 col-lg-offset-2">
-				<p>Jowl short loin beef, ball tip alcatra beef ribs short ribs meatloaf pork loin burgdoggen jerky filet mignon turkey. Meatloaf cow bacon, jerky boudin rump ground round. Doner beef salami t-bone shoulder cupim. Pancetta fatback ribeye shankle kevin, venison meatball strip steak sausage brisket rump kielbasa picanha. Jerky tail fatback leberkas. Kevin corned beef beef drumstick bresaola brisket prosciutto pig alcatra. Drumstick ground round beef prosciutto venison capicola tail brisket alcatra pig turkey tongue ball tip.</p>
+        <p>{{about.paragraph1}}</p>
 			</div>
 			<div class="col-lg-4">
-				<p>Turkey pork chop porchetta, picanha spare ribs prosciutto boudin. Swine tri-tip shank pancetta, landjaeger ham drumstick porchetta. Beef ribs biltong jerky tri-tip pork belly pork loin. Tongue frankfurter capicola pork chop, pancetta chuck cupim landjaeger. Picanha ball tip beef ribs meatball cupim, tongue sirloin pancetta pastrami. Ham hock corned beef prosciutto, fatback drumstick tenderloin swine kevin.</p>
+				<p>{{about.paragraph2}}</p>
 			</div>
 		</div>
 	</div>`
 })
 
 let aboutCtrl = new Vue({
-  el: '#about'
+  el: '#about',
+  data:{
+    about: abouInfo
+  }
 })
