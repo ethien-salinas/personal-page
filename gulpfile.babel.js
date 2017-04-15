@@ -11,7 +11,7 @@ import pkg         from './package.json';
 
 // Set the banner content
 let banner =
-`/*!
+    `/*!
  * <%= pkg.title %> v<%= pkg.version %>
  * ${new Date().getFullYear()} <%= pkg.author %>
  */
@@ -41,18 +41,18 @@ gulp.task('minify-css', ['less'], () => {
 
 // Minify JS
 gulp.task('minify-js', function (cb) {
-  pump([
-      gulp.src('js/freelancer.js'),
-      uglify(),
-      header(banner, { pkg: pkg }),
-      rename({ suffix: '.min' }),
-      gulp.dest('js'),
-      browserSync.reload({
-        stream: true
-      })
+    pump([
+        gulp.src('js/freelancer.js'),
+        uglify(),
+        header(banner, { pkg: pkg }),
+        rename({ suffix: '.min' }),
+        gulp.dest('js'),
+        browserSync.reload({
+            stream: true
+        })
     ],
-    cb
-  );
+        cb
+    );
 });
 
 
@@ -65,21 +65,18 @@ gulp.task('copy', () => {
         .pipe(gulp.dest('vendor/jquery'))
 
     gulp.src([
-            'node_modules/font-awesome/**',
-            '!node_modules/font-awesome/**/*.map',
-            '!node_modules/font-awesome/.npmignore',
-            '!node_modules/font-awesome/*.txt',
-            '!node_modules/font-awesome/*.md',
-            '!node_modules/font-awesome/*.json'
-        ])
+        'node_modules/font-awesome/**',
+        '!node_modules/font-awesome/**/*.map',
+        '!node_modules/font-awesome/.npmignore',
+        '!node_modules/font-awesome/*.txt',
+        '!node_modules/font-awesome/*.md',
+        '!node_modules/font-awesome/*.json'
+    ])
         .pipe(gulp.dest('vendor/font-awesome'))
 })
 
-// Run everything
-gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
-
 // Configure the browserSync task
-gulp.task('browserSync', function() {
+gulp.task('browserSync', function () {
     browserSync.init({
         server: {
             baseDir: ''
@@ -87,8 +84,11 @@ gulp.task('browserSync', function() {
     })
 })
 
+// Prepare deliverable version
+gulp.task('default', ['less', 'minify-css', 'minify-js', 'copy']);
+
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'less', 'minify-css', 'minify-js'], () => {
+gulp.task('dev', ['copy', 'browserSync', 'less', 'minify-css', 'minify-js'], () => {
     gulp.watch('less/*.less', ['less']);
     gulp.watch('css/*.css', ['minify-css']);
     gulp.watch('js/*.js', ['minify-js']);
