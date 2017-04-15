@@ -12,13 +12,13 @@ $ yarn run start-backend
 
 This project is configured with Gulp
 
-To prepare the project, to run the first time or to create the deliverable version, it's necessary to run the default task
-```shell
-$ yarn run start
-```
-
-To run in development mode (synchronized browser), run the next task
+To run in development mode (synchronized browser), run dev task
 ```shell
 $ yarn run start dev
+```
+
+To prepare the project to create a deliverable version, run default task
+```shell
+$ yarn run start
 ```
 
