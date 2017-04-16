@@ -29,7 +29,13 @@ Vue.component('navigation-bar', {
 let menuCtrl = new Vue({
   el: '#mainNav',
   data: {
-    menuItems: []
+    menuItems: [],
+    classArray: [
+      'navbar',
+      'navbar-default',
+      'navbar-fixed-top',
+      'navbar-custom'
+    ]
   },
   beforeCreate() {
     let self = this

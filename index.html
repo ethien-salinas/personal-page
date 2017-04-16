@@ -30,7 +30,7 @@
  <div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
 <!-- Navigation -->
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+<nav id="mainNav" v-bind:class="classArray">
 	<navigation-bar v-bind:menu-items-array='menuItems'></navigation-bar>
 </nav>
 
