@@ -1,7 +1,33 @@
 const PORTFOLIO_URL = `http://localhost:4000/portfolio`
 
+Vue.component('navigation-bar', {
+  props: ['menuItemsArray'],
+  template:
+  `<div class="container">
+
+		<!-- Brand and toggle -->
+		<div class="navbar-header page-scroll">
+			<button class="navbar-toggle" data-toggle="collapse" data-target="#collapse-menu">
+				<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>.
+			</button>
+			<a class="navbar-brand" href="#page-top">Ethien Salinas</a>
+		</div>
+
+		<!-- nav links -->
+		<div id="collapse-menu" class="collapse navbar-collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li v-for="menuItem in menuItemsArray" v-bind:class="menuItem.class">
+					<a v-bind:href="'#'+menuItem.link">{{menuItem.label}}</a>
+				</li>
+			</ul>
+		</div>
+
+	</div>`
+})
+
+
 let menuCtrl = new Vue({
-  el: '#collapse-menu',
+  el: '#mainNav',
   data: {
     menuItems: []
   },

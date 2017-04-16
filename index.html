@@ -31,24 +31,7 @@
 
 <!-- Navigation -->
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-	<div class="container">
-		<!-- Brand and toggle -->
-		<div class="navbar-header page-scroll">
-			<button class="navbar-toggle" data-toggle="collapse" data-target="#collapse-menu">
-				<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>.
-			</button>
-			<a class="navbar-brand" href="#page-top">Ethien Salinas</a>
-		</div>
-
-		<!-- nav links -->
-		<div id="collapse-menu" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li v-for="menuItem in menuItems" v-bind:class="menuItem.class">
-					<a v-bind:href="'#'+menuItem.link">{{menuItem.label}}</a>
-				</li>
-			</ul>
-		</div>
-	</div>
+	<navigation-bar v-bind:menu-items-array='menuItems'></navigation-bar>
 </nav>
 
 <!-- Header -->
