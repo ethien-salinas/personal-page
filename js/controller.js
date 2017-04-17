@@ -26,7 +26,7 @@ Vue.component('navigation-bar', {
 })
 
 
-let menuCtrl = new Vue({
+let navbarCtrl = new Vue({
   el: '#mainNav',
   data: {
     menuItems: [],
@@ -82,7 +82,7 @@ let portfolioCtrl = new Vue({
   }
 });
 
-let portfolioDetail = new Vue({
+let portfolioDetailCtrl = new Vue({
   el: '#portfolioDetailSection',
   data: {
     portfolioDetails: []
