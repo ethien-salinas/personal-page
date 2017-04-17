@@ -48,6 +48,38 @@ let navbarCtrl = new Vue({
   }
 });
 
+
+Vue.component('portfolio-section', {
+  props: ['portfolioItemsArray'],
+  template:
+  `<div class="container">
+
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Portfolio</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+
+		<button v-on:click="sortAscPortfolioItems">asc</button>
+		<button v-on:click="sortDescPortfolioItems">desc</button>
+
+		<div class="row">
+			<div class="col-sm-4 portfolio-item" v-for="portfolioItem in portfolioItemsArray">
+				<a v-bind:href="'#'+portfolioItem.link" class="portfolio-link" data-toggle="modal">
+					<div class="caption">
+						<div class="caption-content">
+							<i class="fa fa-search-plus fa-3x"></i>
+						</div>
+					</div>
+					<img v-bind:src="'img/portfolio/'+portfolioItem.img" class="img-responsive" alt="image">
+				</a>
+			</div>
+		</div>
+
+	</div>`
+})
+
 let portfolioCtrl = new Vue({
   el: '#portfolio',
   data: {
