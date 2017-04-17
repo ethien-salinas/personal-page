@@ -132,15 +132,15 @@
 							<p>{{portfolioDetail.details.description}}</p>
 							<ul class="list-inline item-details">
 								<li>Client:
-									<strong><a href="https://atom.io/">{{portfolioDetail.details.client}}</a>
+									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.client}}</a>
 									</strong>
 								</li>
 								<li>Date:
-									<strong><a href="https://atom.io/">{{portfolioDetail.details.date}}</a>
+									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.date}}</a>
 									</strong>
 								</li>
 								<li>Service:
-									<strong><a href="https://atom.io/">{{portfolioDetail.details.service}}</a>
+									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.service}}</a>
 									</strong>
 								</li>
 							</ul>
