@@ -25,7 +25,6 @@ Vue.component('navigation-bar', {
 	</div>`
 })
 
-
 let navbarCtrl = new Vue({
   el: '#mainNav',
   data: {
@@ -50,7 +49,6 @@ let navbarCtrl = new Vue({
 
 
 Vue.component('portfolio-section', {
-  props: ['portfolioItemsArray'],
   template:
   `<div class="container">
 
@@ -65,7 +63,7 @@ Vue.component('portfolio-section', {
 		<button v-on:click="sortDescPortfolioItems">desc</button>
 
 		<div class="row">
-			<div class="col-sm-4 portfolio-item" v-for="portfolioItem in portfolioItemsArray">
+			<div class="col-sm-4 portfolio-item" v-for="portfolioItem in portfolioItems">
 				<a v-bind:href="'#'+portfolioItem.link" class="portfolio-link" data-toggle="modal">
 					<div class="caption">
 						<div class="caption-content">
@@ -77,24 +75,16 @@ Vue.component('portfolio-section', {
 			</div>
 		</div>
 
-	</div>`
-})
-
-let portfolioCtrl = new Vue({
-  el: '#portfolio',
-  data: {
-    portfolioItems: []
+	</div>`,
+  data: function () {
+    return {
+      portfolioItems: []
+    }
   },
   methods: {
     sortAscPortfolioItems: function (event) {
-      this.portfolioItems.map((e) => {
-        console.log(`1 - ${e.id}`);
-      });
       this.portfolioItems.sort((a, b) => {
         return a.id - b.id;
-      });
-      this.portfolioItems.map((e) => {
-        console.log(`2 - ${e.id}`);
       });
     },
     sortDescPortfolioItems: function (event) {
@@ -112,7 +102,58 @@ let portfolioCtrl = new Vue({
     xhr.open('GET', PORTFOLIO_URL)
     xhr.send()
   }
+})
+
+let portfolioCtrl = new Vue({
+  el: '#portfolio'
 });
+
+
+Vue.component('portfolio-detail-section', {
+  props: ['portfolioDetailsArray'],
+  template:
+  `<div><div v-for="portfolioDetail in portfolioDetailsArray" v-bind:id="portfolioDetail.details.id" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+
+		<div class="modal-content">
+
+			<div class="close-modal" data-dismiss="modal">
+				<div class="lr">
+					<div class="rl"></div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2">
+						<div class="modal-body">
+							<h2>Data integration project</h2>
+							<hr class="star-primary">
+							<img v-bind:src="'img/portfolio/'+portfolioDetail.details.img" class="img-responsive img-centered" alt="">
+							<p>{{portfolioDetail.details.description}}</p>
+							<ul class="list-inline item-details">
+								<li>Client:
+									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.client}}</a>
+									</strong>
+								</li>
+								<li>Date:
+									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.date}}</a>
+									</strong>
+								</li>
+								<li>Service:
+									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.service}}</a>
+									</strong>
+								</li>
+							</ul>
+							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div></div>`
+})
 
 let portfolioDetailCtrl = new Vue({
   el: '#portfolioDetailSection',

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<title>Pagina personal</title>
+    <title>Pagina personal</title>
 
     <!-- Bootstrap -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +52,7 @@
 
 <!-- Portfolio section -->
 <section id="portfolio">
-	<portfolio-section v-bind:portfolio-items-array='portfolioItems'></portfolio-section>
+	<portfolio-section></portfolio-section>
 </section>
 
 <!-- About section -->
@@ -115,42 +115,7 @@
 
 <!-- Portfolio modals section -->
 <div id="portfolioDetailSection">
-	<div v-for="portfolioDetail in portfolioDetails" v-bind:id="portfolioDetail.details.id" class="portfolio-modal modal fade" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-content">
-			<div class="close-modal" data-dismiss="modal">
-				<div class="lr">
-					<div class="rl"></div>
-				</div>
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
-						<div class="modal-body">
-							<h2>Data integration project</h2>
-							<hr class="star-primary">
-							<img v-bind:src="'img/portfolio/'+portfolioDetail.details.img" class="img-responsive img-centered" alt="">
-							<p>{{portfolioDetail.details.description}}</p>
-							<ul class="list-inline item-details">
-								<li>Client:
-									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.client}}</a>
-									</strong>
-								</li>
-								<li>Date:
-									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.date}}</a>
-									</strong>
-								</li>
-								<li>Service:
-									<strong><a v-bind:href="portfolioDetail.details.project_link">{{portfolioDetail.details.service}}</a>
-									</strong>
-								</li>
-							</ul>
-							<button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<portfolio-detail-section v-bind:portfolio-details-array='portfolioDetails'></portfolio-detail-section>
 </div>
 
 
