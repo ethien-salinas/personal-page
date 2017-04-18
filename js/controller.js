@@ -206,3 +206,22 @@ let aboutCtrl = new Vue({
     xhr.send()
   }
 })
+
+let contactForm = [
+  {
+    "id": "name",
+    "label": "Name"
+  },
+  {
+    "id": "email",
+    "label": "Email Address"
+  },
+  {
+    "id": "phone",
+    "label": "Phone Number"
+  },
+  {
+    "id": "message",
+    "label": "Message"
+  }
+]
