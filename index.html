@@ -62,55 +62,7 @@
 
 <!-- Contact section -->
 <section id="contact">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12 text-center">
-				<h2>Contact me</h2>
-				<hr class="star-primary">
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2">
-				<form name="sentMessage" id="contactForm">
-					<div class="row control-group">
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-							<label for="name">Name</label>
-							<input class="form-control" placeholder="Name" type="text" id="name">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<div class="row control-group">
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-							<label for="email">Email Address</label>
-							<input class="form-control" placeholder="Email Address" type="text" id="email">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<div class="row control-group">
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-							<label for="phone">Phone Number</label>
-							<input class="form-control" placeholder="Phone" type="text" id="phone">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<div class="row control-group">
-						<div class="form-group col-xs-12 floating-label-form-group controls">
-							<label for="message">Message</label>
-							<input class="form-control" placeholder="Message" type="text" id="message">
-							<p class="help-block text-danger"></p>
-						</div>
-					</div>
-					<br>
-					<div id="form-result"></div>
-					<div class="row">
-						<div class="form-group col-xs-12">
-							<button type="submit" class="btn btn-success btn-lg">Send</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+	<contact-section v-bind:contact-details='contactInfo'></contact-section>
 </section>
 
 <!-- Portfolio modals section -->

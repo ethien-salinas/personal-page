@@ -173,7 +173,8 @@ let portfolioDetailCtrl = new Vue({
 
 Vue.component('about-section', {
   props: ['about'],
-  template: `<div class="container">
+  template:
+  `<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
 				<h2>{{about.title}}</h2>
@@ -225,3 +226,43 @@ let contactForm = [
     "label": "Message"
   }
 ]
+
+Vue.component('contact-section', {
+  props: ['contactDetails'],
+  template:
+  `<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>Contact me</h2>
+				<hr class="star-primary">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2">
+				<form name="sentMessage" id="contactForm">
+					<div class="row control-group" v-for="contactDetail in contactDetails">
+						<div class="form-group col-xs-12 floating-label-form-group controls">
+							<label v-bind:for="contactDetail.id">{{contactDetail.label}}</label>
+							<input class="form-control" v-bind:placeholder="contactDetail.label" type="text" v-bind:id="contactDetail.id">
+							<p class="help-block text-danger"></p>
+						</div>
+					</div>
+					<br>
+					<div id="form-result"></div>
+					<div class="row">
+						<div class="form-group col-xs-12">
+							<button type="submit" class="btn btn-success btn-lg">Send</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>`
+})
+
+let contactCtrl = new Vue({
+  el: '#contact',
+  data: {
+    contactInfo: contactForm
+  }
+})

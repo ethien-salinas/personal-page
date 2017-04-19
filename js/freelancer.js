@@ -24,7 +24,10 @@ $(document).ready(function () {
 			url: 'http://localhost:4000/mail',
 			type: 'POST',
 			data: {
-				name: $('input#name').val()
+				name:	$('input#name').val(),
+				email:	$('input#email').val(),
+				phone:	$('input#phone').val(),
+				message:$('input#message').val()
 			},
 			success: function (response) {
 				console.log('SUCCESS!!!' + response);
