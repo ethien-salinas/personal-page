@@ -59,8 +59,12 @@ Vue.component('portfolio-section', {
 			</div>
 		</div>
 
-		<button v-on:click="sortAscPortfolioItems" class="btn btn-success"><i class="fa fa-sort-asc fa-fw" aria-hidden="true"></i></button>
-		<button v-on:click="sortDescPortfolioItems" class="btn btn-success"><i class="fa fa-sort-desc fa-fw" aria-hidden="true"></i></button>
+		<button v-on:click="sortAscPortfolioItems" class="btn btn-success">
+			<i class="fa fa-sort-asc fa-fw" aria-hidden="true"></i>
+		</button>
+		<button v-on:click="sortDescPortfolioItems" class="btn btn-success">
+			<i class="fa fa-sort-desc fa-fw" aria-hidden="true"></i>
+		</button>
 
 		<div class="row">
 			<div class="col-sm-4 portfolio-item" v-for="portfolioItem in portfolioItems">
