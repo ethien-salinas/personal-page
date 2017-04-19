@@ -212,25 +212,6 @@ let aboutCtrl = new Vue({
   }
 })
 
-let contactForm = [
-  {
-    "id": "name",
-    "label": "Name"
-  },
-  {
-    "id": "email",
-    "label": "Email Address"
-  },
-  {
-    "id": "phone",
-    "label": "Phone Number"
-  },
-  {
-    "id": "message",
-    "label": "Message"
-  }
-]
-
 Vue.component('contact-section', {
   props: ['contactDetails'],
   template:
@@ -265,8 +246,17 @@ Vue.component('contact-section', {
 })
 
 let contactCtrl = new Vue({
-  el: '#contact',
-  data: {
-    contactInfo: contactForm
-  }
+	el: '#contact',
+	data: {
+		contactInfo: []
+	},
+	beforeCreate() {
+		let self = this
+		let xhr = new XMLHttpRequest()
+		xhr.onload = function () {
+			self.contactInfo = JSON.parse(xhr.responseText).contactForm
+		}
+		xhr.open('GET', PORTFOLIO_URL)
+		xhr.send()
+	}
 })
